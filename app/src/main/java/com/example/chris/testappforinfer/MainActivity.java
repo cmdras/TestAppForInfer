@@ -12,9 +12,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    public static void foo2 () throws IOException {
+        FileOutputStream fos2 = new FileOutputStream(new File("whatever.txt"));
+        fos2.write(3);   //DOH! What if exception?
+        fos2.close();
+    }
+
+///dummy text
+
     public static void foo () throws IOException {
         FileOutputStream fos = new FileOutputStream(new File("whatever.txt"));
         fos.write(10);   //DOH! What if exception?
         fos.close();
     }
+
+
 }
